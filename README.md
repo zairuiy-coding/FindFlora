@@ -42,8 +42,7 @@ The `TSNEProcessor` class reduces the dimensionality of the attribute data using
 
 1. **Data Conversion:** Converts the attribute matrix from integers to doubles, preparing it for t-SNE computation.
 2. **t-SNE Computation:** Using the Smile library, it reduces the data to two dimensions, optimizing the balance between accuracy and computational efficiency.
-3. **Scaling Results:** Post-reduction, the t-SNE coordinates are scaled to a uniform range (0 to 100), maintaining consistency in visualization and further analysis.
-4. **Tracking Extremes:** Tracks the minimum and maximum values of the t-SNE results to accurately adjust scaling and provide insights into the data distribution.
+3. **Scaling Results:** Post-reduction, the t-SNE coordinates are scaled to a uniform range (0 to 100), maintaining consistency in further quadtree construction and analysis.
 
 ## 🌟 Recommendation Engine Explained
 
