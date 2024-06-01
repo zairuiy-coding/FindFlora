@@ -21,7 +21,29 @@ FindFlora is a Java-based application that employs machine learning techniques a
 - **QuadTree:** Central to our recommendation engine, this data structure efficiently organizes flowers spatially. Each node corresponds to a flower, with coordinates representing t-SNE scores to facilitate spatial queries for finding the nearest similar flowers.
 - **Search Engine:** Built on an inverted index, this component ensures rapid retrieval of flowers by various attributes.
 
-![FindFlora UML](FindFlora_UML_diagram.png)
+## 🌐 Data Processing in FindFlora
+
+FindFlora employs sophisticated data processing techniques to ensure accurate and relevant flower recommendations. Our application meticulously manages and utilizes extensive flower data through a series of carefully designed procedures.
+
+### Data Loading and Parsing
+
+The `FlowerDatabase` class is essential for loading flower data from a CSV file, parsing each entry to extract names, descriptions, plant types, colors, hardiness zones, bloom seasons, sun needs, water needs, and maintenance requirements. Here’s how data is processed:
+
+- **Name Parsing:** Flowers often have multiple names or aliases. Our system parses and maps each name (primary and aliases) to its primary name for consistent referencing throughout the application.
+- **Color Extraction:** We standardize a broad range of color descriptions into recognized color names using a predefined mapping, aiding in accurate user preference matching and search functionality.
+
+### Building the Attribute Matrix
+
+`FlowerMatrixBuilder` constructs an attribute matrix representing flowers and their attributes. This matrix is pivotal for calculating similarity scores between flowers, fundamental to our recommendation engine. Each row represents a flower, and each column corresponds to an attribute, filled with binary values indicating the presence or absence of specific attributes.
+
+### Dimensionality Reduction with t-SNE
+
+The `TSNEProcessor` class reduces the dimensionality of the attribute data using t-Distributed Stochastic Neighbor Embedding (t-SNE), which is vital for visualizing complex datasets in a way that is interpretable and actionable:
+
+1. **Data Conversion:** Converts the attribute matrix from integers to doubles, preparing it for t-SNE computation.
+2. **t-SNE Computation:** Using the Smile library, it reduces the data to two dimensions, optimizing the balance between accuracy and computational efficiency.
+3. **Scaling Results:** Post-reduction, the t-SNE coordinates are scaled to a uniform range (0 to 100), maintaining consistency in visualization and further analysis.
+4. **Tracking Extremes:** Tracks the minimum and maximum values of the t-SNE results to accurately adjust scaling and provide insights into the data distribution.
 
 ## 🌟 Recommendation Engine Explained
 
@@ -55,8 +77,8 @@ We welcome contributions from the community! Whether improving the algorithm, en
 
 ## ✨ Contributors
 
-- 👩‍💻 **Zairui Yang:** [Github Profile](https://github.com/zairuiy-coding)
-- 👩‍💻 **Hao Tan:** [Github Profile](https://github.com/tanhaow)
+- 👩‍💻 **Zairui Yang:** [@zairuiy-coding](https://github.com/zairuiy-coding)
+- 👩‍💻 **Hao Tan:** [@tanhaow](https://github.com/tanhaow)
 
 ---
 
