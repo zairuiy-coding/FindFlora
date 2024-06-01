@@ -1,23 +1,23 @@
 # FindFlora 💛👩‍🌾🌻
 
-Welcome to FindFlora! If you're passionate about gardening and looking for a smart, efficient way to select the perfect flowers for your garden based on specific environmental conditions, FindFlora is designed just for you.💡
+Welcome to FindFlora! Are you passionate about gardening? Looking for a smart, efficient way to select the perfect flowers for your garden based on specific environmental conditions? If yes, FindFlora is here to help. Utilizing advanced t-SNE algorithms for dimensional reduction and quadtree structures for efficient spatial querying, FindFlora tailors flower recommendations to the unique conditions of your garden, ensuring optimal growth and aesthetic harmony. 💡🌸✨
 
 ----
 
-FindFlora is a Java-based application that leverages t-SNE and quadtree BFS to provide tailored flower recommendations based on the unique conditions of your garden. Our system is designed to help both novice and expert gardeners discover and integrate the best blooms into their green spaces. 🌸✨
+FindFlora is a Java-based application that leverages advanced machine learning techniques and spatial data structures to provide tailored flower recommendations. Our system is designed for both novice and expert gardeners to discover and integrate the best blooms into their green spaces.
 
 ### 🌺 Key Features:
 
-- **Tailored Recommendations:** Get personalized flower suggestions that fit the unique environmental conditions and aesthetic preferences of your garden.
+- **Tailored Recommendations:** Receive personalized flower suggestions that fit the specific environmental and aesthetic conditions of your garden.
 - **Advanced Search Capabilities:** Quickly find flowers based on specific attributes using a robust, attribute-indexed search system.
-- **Data-Driven Insights:** Our recommendations are powered by a robust dataset from Kaggle, which features detailed information on 200+ flowers.
+- **Data-Driven Insights:** Our recommendations are powered by a detailed Kaggle dataset featuring information on over 200 flowers.
 
 ## 🛠️ Project Structure
 
-- **Garden Model:** Represents your garden's characteristics, including size and environmental conditions. Methods allow for updating garden details and managing flower types.
-- **Flower Model:** Each flower's profile with attributes like name, color, and bloom season which are crucial for recommendations and searches.
-- **QuadTree:** Central to our recommendation engine, this data structure efficiently organizes flowers spatially. Each node in the QuadTree corresponds to a flower with its coordinates representing specific t-SNE scores, allowing for spatial queries that facilitate finding the nearest similar flowers.
-- **Search Engine:** Built using an inverted index, this component ensures rapid retrieval of flowers by various attributes, enhancing the user's ability to find flowers by specific criteria.
+- **Garden Model:** Represents your garden's characteristics, such as size and environmental conditions. Methods allow for updating garden details and managing flower types.
+- **Flower Model:** Profiles each flower with key attributes like name, color, and bloom season which are crucial for recommendations and searches.
+- **QuadTree:** At the heart of our recommendation engine, this data structure efficiently organizes flowers spatially. Each node in the QuadTree corresponds to a flower, with coordinates representing t-SNE scores to facilitate spatial queries for finding the nearest similar flowers.
+- **Search Engine:** Built on an inverted index, this component ensures rapid retrieval of flowers by various attributes, enhancing the user's ability to find flowers by specific criteria.
 
 ![FindFlora_UML](FindFlora_UML_diagram.png)
 
