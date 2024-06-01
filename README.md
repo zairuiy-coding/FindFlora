@@ -1,6 +1,8 @@
 # FindFlora 💛👩‍🌾🌻
 
-Welcome to FindFlora! Are you passionate about gardening? Looking for a smart, efficient way to select the perfect flowers for your garden based on specific environmental conditions? If yes, FindFlora is here to help. Utilizing advanced t-SNE algorithms for dimensional reduction and quadtree structures for efficient spatial querying, FindFlora tailors flower recommendations to the unique conditions of your garden, ensuring optimal growth and aesthetic harmony. 💡🌸✨
+Welcome to FindFlora! Are you passionate about gardening? Looking for a smart, efficient way to select the perfect flowers for your garden based on specific environmental conditions? If yes, FindFlora is here to help.💡 
+
+Utilizing advanced t-SNE algorithms for dimensional reduction and quadtree structures for efficient spatial querying, FindFlora tailors flower recommendations to the unique conditions of your garden, ensuring optimal growth and aesthetic harmony. 🌸✨
 
 ----
 
