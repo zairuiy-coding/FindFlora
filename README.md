@@ -1,10 +1,10 @@
 # FindFlora 💛👩‍🌾🌻
 
-Welcome to FindFlora! If you're passionate about gardening and looking for a smart, efficient way to select the perfect flowers for your garden, you've come to the right place.💡
+Welcome to FindFlora! If you're passionate about gardening and looking for a smart, efficient way to select the perfect flowers for your garden based on specific environmental conditions, FindFlora is designed just for you.💡
 
 ----
 
-FindFlora is a Java-based application that leverages algorithms to provide tailored flower recommendations based on the unique conditions of your garden. Our system is designed to help both novice and expert gardeners discover and integrate the best blooms into their green spaces. 🌸✨
+FindFlora is a Java-based application that leverages t-SNE and quadtree BFS to provide tailored flower recommendations based on the unique conditions of your garden. Our system is designed to help both novice and expert gardeners discover and integrate the best blooms into their green spaces. 🌸✨
 
 ### 🌺 Key Features:
 
@@ -12,10 +12,28 @@ FindFlora is a Java-based application that leverages algorithms to provide tailo
 - **Advanced Search Capabilities:** Quickly find flowers based on specific attributes using a robust, attribute-indexed search system.
 - **Data-Driven Insights:** Our recommendations are powered by a robust dataset from Kaggle, which features detailed information on 200+ flowers.
 
-### 🛠️ Data Structure
+## 🛠️ Project Structure
 
-- **Recommendation Engine:** At the core of FindFlora is a quad-tree data structure, which utilizes t-SNE scores calculated from pairwise comparisons of flowers. This approach allows for nuanced and highly relevant flower recommendations.
-- **Search Engine:** An inverted index efficiently maps various flower attributes to their corresponding entries, enabling fast and accurate search results.
+- **Garden Model:** Represents your garden's characteristics, including size and environmental conditions. Methods allow for updating garden details and managing flower types.
+- **Flower Model:** Each flower's profile with attributes like name, color, and bloom season which are crucial for recommendations and searches.
+- **QuadTree:** Central to our recommendation engine, this data structure efficiently organizes flowers spatially. Each node in the QuadTree corresponds to a flower with its coordinates representing specific t-SNE scores, allowing for spatial queries that facilitate finding the nearest similar flowers.
+- **Search Engine:** Built using an inverted index, this component ensures rapid retrieval of flowers by various attributes, enhancing the user's ability to find flowers by specific criteria.
+
+![FindFlora_UML](FindFlora_UML_diagram.png)
+
+## 🌟 Recommendation Engine Explained
+
+### QuadTree Mechanics:
+The QuadTree is a tree data structure used to partition a space into distinct sections, each holding a different set of flower data points. Each node in the tree can potentially represent a partition of space at a different granularity. The flower data points are distributed among the nodes based on their t-SNE scores which correlate with their similarity in features.
+
+### Insertion Process:
+1. **Insertion:** Flowers are inserted into the QuadTree based on their t-SNE derived spatial scores. The process begins at the root and traverses down to the appropriate leaf node adhering to spatial boundaries defined at each node.
+2. **Boundary Checking:** Ensures that each flower's coordinates are within the spatial constraints of the node. If a flower does not fit, the tree is traversed upwards until a suitable insertion point is found or a new root is established.
+
+### Finding Nearest Neighbors:
+To recommend similar flowers, the application performs a BFS-like traversal from the node of interest. This method starts at a specific node (representing a flower's position in our t-SNE derived spatial context) and expands outwards in layers—first exploring all sibling nodes and their children. This layered, breadth-first search approach allows the system to effectively capture approximately similar flowers located in nearby spatial partitions. The benefits of this method include:
+- **Layered Search:** Ensures a comprehensive examination of neighboring nodes, providing a thorough and relevant selection of flower recommendations.
+- **Approximate Nearest Neighbors:** Offers an efficient way to find similar flowers without the need for exact nearest neighbor calculations, which can be computationally expensive. This is particularly useful when speed and practical relevance take precedence over absolute accuracy.
 
 ### 🚀 Usage
 
@@ -32,6 +50,11 @@ FindFlora is a Java-based application that leverages algorithms to provide tailo
 ### 🌟 Contribute
 
 We welcome contributions from the community! Whether it's improving the recommendation algorithm, enhancing the user interface, or expanding the dataset, your input can help make FindFlora even better for gardeners everywhere.
+
+## ✨ Contributors
+
+- 👩‍💻**Zairui Yang:** [Github Profile](https://github.com/zairuiy-coding)
+- 👩‍💻**Hao Tan:** [Github Profile](https://github.com/tanhaow)
 
 ----
 
