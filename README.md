@@ -51,12 +51,12 @@ The QuadTree partitions space into distinct sections, each holding a different s
 
 ### Insertion Process:
 1. **Insertion:** Flowers are inserted into the QuadTree based on their t-SNE derived spatial scores, starting from the root and adhering to spatial boundaries.
-2. **Boundary Checking:** Ensures coordinates are within node constraints. If not, the tree is traversed upwards until a fit is found or a new root is established.
+2. **Boundary Checking:** Ensures coordinates are within node constraints. 
 
 ### Finding Nearest Neighbors:
 A BFS-like traversal identifies similar flowers starting from a specific node and expanding outwards. This method captures similar flowers in nearby spatial partitions effectively.
-- **Layered Search:** Provides a thorough selection of flower recommendations by examining neighboring nodes.
-- **Approximate Nearest Neighbors:** Efficiently finds similar flowers, prioritizing speed and practical relevance over absolute accuracy.
+- **Layered Search:** Thoroughly selects flower recommendations by examining neighboring nodes. The traversal begins with the node's descendants, which are within the same area and likely close to each other. It then moves upwards to the node's siblings, parent's siblings, and beyond.
+- **Approximate Nearest Neighbors:** Efficiently finds similar flowers by prioritizing speed and practical relevance over exact accuracy, ensuring quick and relevant recommendations.
 
 ### 🚀 Usage
 
